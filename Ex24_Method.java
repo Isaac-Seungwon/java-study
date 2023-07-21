@@ -20,12 +20,6 @@ public class Ex24_Method {
 	// 변수, 메소드 등에서 Ctrl + 1을 누르면 Rename in file, Rename in workspace가 뜬다.
 	// 해당 변수, 메소드를 호출하고 있는 곳에서 10개든 100개든 동시에 이름이 변경된다.
 	// 이름을 직접 바꾸면 실수가 생길 수 있으므로, 해당 기능을 이용하는 것이 좋다.
-	/*
-	private static void swap(int a, int b) {
-		// TODO Auto-generated method stub
-		
-	}
-	*/
 	
 	private static void swap(int a, int b) {
 		
