@@ -11,6 +11,13 @@ public class Ex34_String {
 		// 문자열, String
 		// - JDK 제공하는 문자열 조작 기능
 		
+		
+		// 버전 관리 시스템
+		// CVS (Concurrent Versions System)
+		// SVN (Subversion)
+		// Git
+		
+		
 		// m1();
 		m2();
 		// m3();
@@ -255,7 +262,7 @@ public class Ex34_String {
 		String[] words = {"바보", "ㅂㅏㅂㅗ", "멍청이", "해삼", "말미잘"};
 		
 		for (int i=0; i<words.length; i++) {
-			if (content.indexOf(word) > -1) {
+			if (content.indexOf(words[i]) > -1) {
 				System.out.println("금지어 발견");
 				break;
 			}
