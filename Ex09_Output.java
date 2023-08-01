@@ -101,9 +101,9 @@ public class Ex09_Output {
 		// %d, %f
 		// - 자릿수 표기(3자리)
 		
-		int price = 1234567;
-		System.out.printf("금액: %d원\n", price); // 금액: 1234567원
-		System.out.printf("금액: %,d원\n", price); // 금액: 1,234,567원
+		int price = 1000000;
+		System.out.printf("금액: %d원\n", price); // 금액: 1000000원
+		System.out.printf("금액: %,d원\n", price); // 금액: 1,000,000원
 		
 		
 		// 천단위 + 소수 이하 2자리 + 전체 너비(20자리 + 우측정렬)

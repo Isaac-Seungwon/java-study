@@ -1,7 +1,5 @@
 package com.test.java;
 
-import javax.net.SocketFactory;
-
 public class Ex15_Operator {
 
 	public static void main(String[] args) {
