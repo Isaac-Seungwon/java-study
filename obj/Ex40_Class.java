@@ -32,6 +32,6 @@ public class Ex40_Class {
 		System.out.println(isaac.info());
 		
 		// ***** java.lang.NullPointerException
-		System.out.println(father.info());
+		// System.out.println(father.info());
 	}
 }

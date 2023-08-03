@@ -15,7 +15,7 @@ public class Ex38_Class {
 		// - 영어
 		// - 수학
 		
-		Student student = new Student();
+		Student2 student = new Student2();
 
 		student.name = "John";
 		student.age = 20;
