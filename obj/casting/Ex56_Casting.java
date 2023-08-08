@@ -50,12 +50,7 @@ public class Ex56_Casting {
 		Printer p2 = new HP600();
 		Object o1 = new LG500();
 		
-		
-		
-		
-		
-		
-		
+
 		
 		// 상황 ) 프린터 판매 대리점 운영
 		//	- 재고
