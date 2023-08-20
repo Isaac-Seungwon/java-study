@@ -116,7 +116,7 @@ public class Ex72_Lambda {
 		}
 		System.out.println(nums); // [3, 10, 1, 8, 4, 10, 1, 2, 8, 4]
 		
-		
+		// 익명 클래스 활용
 		nums.sort(new Comparator<Integer>() {
 			@Override
 			public int compare(Integer o1, Integer o2) {
@@ -125,7 +125,7 @@ public class Ex72_Lambda {
 		});
 		System.out.println(nums); // [1, 1, 2, 3, 4, 4, 8, 8, 10, 10]
 		
-		
+		// 람다식 활용
 		nums.sort((Integer o1, Integer o2) -> {
 			return o1 - o2;
 		});
