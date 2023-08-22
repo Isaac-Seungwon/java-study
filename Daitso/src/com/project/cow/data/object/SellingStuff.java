@@ -1,6 +1,8 @@
 package com.project.cow.data.object;
 
-public class SellingStuff {
+import com.project.cow.admin.StuffCheck.Stuff;
+
+public class SellingStuff implements Stuff {
 
 	private String no;
 	private String name;
@@ -16,7 +18,7 @@ public class SellingStuff {
 	
 	public SellingStuff(String no, String name, String category, String price, String method, String payment,
 			String condition, String from, String until, String like, String sellerNo) {
-	
+		
 		this.no = no;
 		this.name = name;
 		this.category = category;

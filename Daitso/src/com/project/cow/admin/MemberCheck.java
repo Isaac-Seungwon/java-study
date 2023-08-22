@@ -22,26 +22,18 @@ public class MemberCheck {
 
 		while (true) {
 			// 메인 메뉴 표시 및 사용자 선택
-			System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-			System.out.println("                    회원 관리");
+			AdminMenu.printMenu("회원 관리");
 			memberCheckFunction();
-			String functionChoice = scan.nextLine().trim();
+			String manageChoice = scan.nextLine().trim();
 
-			switch (functionChoice) {
-			case "1":
-				// 전체 회원 목록 조회
+			if (manageChoice.equals("1")) { // 전체 회원 목록 조회
 				MemberListDisplay.sortMemberList(scan, sortCriterion, rateCriterionList);
-				break;
-			case "2":
-				// 회원 검색
+			} else if (manageChoice.equals("2")) { // 회원 검색
 				MemberSearch.searchMember(scan);
-				break;
-			case "3":
-				// 회원 삭제
+			} else if (manageChoice.equals("3")) { // 회원 삭제
 				MemberRemove.removeMember(scan);
-				break;
-			default:
-				return; // 로그인 메뉴
+			} else { // 로그인 메뉴
+				return;
 			}
 		}
 	}
@@ -50,13 +42,7 @@ public class MemberCheck {
 	 * 등급별 정렬 방법 화면 출력
 	 */
 	private static void memberCheckFunction() {
-		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 		System.out.println("[회원 관리 기능]");
-		System.out.println("1. 전체 회원 목록 조회");
-		System.out.println("2. 회원 검색");
-		System.out.println("3. 회원 삭제");
-		System.out.println("0. 돌아가기");
-		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-		System.out.print("번호 입력: ");
+		AdminMenu.printOption("전체 회원 목록 조회", "회원 검색", "회원 삭제");
 	}
 }

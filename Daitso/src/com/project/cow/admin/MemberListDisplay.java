@@ -30,12 +30,10 @@ public class MemberListDisplay {
 	 * @param rateCriterionList    등급 정렬 기준 리스트
 	 */
 	public static void sortMemberList(Scanner scan, String defaultSortCriterion, String[] rateCriterionList) {
-		boolean loop = true;
 
-		while (loop) {
+		while (true) {
 			// 회원 목록 옵션 표시 및 사용자 선택
-			System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-			System.out.println("              전체 회원 목록 조회");
+			AdminMenu.printMenu("전체 회원 목록 조회");
 			String sortProcess = chooseSortProcess(scan);
 
 			if (!Pattern.matches("[1234]", sortProcess)) {
@@ -84,7 +82,6 @@ public class MemberListDisplay {
 	 * @param sortCriterion 정렬 기준
 	 */
 	private static void sortAndPrintMember(Scanner scan, String sortCriterion) {
-		boolean groupLoop = true;
 		int groupDataCount = 0;
 		String groupChoice;
 
@@ -94,11 +91,9 @@ public class MemberListDisplay {
 		// 회원 정렬 수행
 		performSorting(sortCriterion);
 
-		while (groupLoop) {
+		while (true) {
 			if (!sortCriterion.equals("0")) {
-				System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-				System.out.println("                    회원 목록");
-				System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+				AdminMenu.printMenu("회원 목록");
 
 				// 회원 정보 출력
 				displayMemberInfo(sortCriterion, lastRangeData, groupDataCount);
@@ -118,11 +113,7 @@ public class MemberListDisplay {
 					lastRangeData.push(0);
 				}
 			} else { // 돌아가기
-				groupLoop = false;
-
-				while (!lastRangeData.isEmpty()) {
-					lastRangeData.pop();
-				}
+				return;
 			}
 		}
 	}
@@ -295,31 +286,16 @@ public class MemberListDisplay {
 	 * 회원 목록 정렬 화면을 출력하는 메소드
 	 */
 	private static void displaySortMemberList() {
-		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 		System.out.println("[회원 목록 정렬]");
-		System.out.println("1. 등급별 정렬");
-		System.out.println("2. 이름순 정렬");
-		System.out.println("3. 나이순 정렬");
-		System.out.println("4. 주소별 정렬");
-		System.out.println("0. 돌아가기");
-		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-		System.out.print("번호 입력: ");
+		AdminMenu.printOption("등급별 정렬", "이름순 정렬", "나이순 정렬", "주소별 정렬");
 	}
 
 	/**
 	 * 등급별 정렬 방법을 화면에 출력하는 메소드
 	 */
 	private static void displayRateCriterionList() {
-		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 		System.out.println("[등급별 정렬]");
-		System.out.println("1. 1++등급 정렬");
-		System.out.println("2. 1+등급 정렬");
-		System.out.println("3. 1등급 정렬");
-		System.out.println("4. 2등급 정렬");
-		System.out.println("5. 3등급 정렬");
-		System.out.println("0. 돌아가기");
-		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-		System.out.print("번호 입력: ");
+		AdminMenu.printOption("1++등급 정렬", "1+등급 정렬", "1등급 정렬", "2등급 정렬", "3등급 정렬");
 	}
 
 	/**
@@ -328,13 +304,13 @@ public class MemberListDisplay {
 	 * @param lastRangeDataSize 마지막 범위 데이터 크기
 	 */
 	private static void displayDataList(String sortCriterion, int lastRangeDataSize) {
-		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+		AdminMenu.printLine();
 		System.out.println("1. 다음 100명 보기");
 		if (lastRangeDataSize > 2) {
 			System.out.println("2. 이전 100명 보기");
 		}
 		System.out.println("0. 돌아가기");
-		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+		AdminMenu.printLine();
 		System.out.print("번호 입력: ");
 	}
 }
